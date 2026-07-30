@@ -79,3 +79,8 @@ Some ideas for future development include:
 ## Acknowledgements
 
 This project was developed as a team during **HackRPI 2025** and demonstrates rapid prototyping, collaboration, and modern frontend development in a hackathon environment.
+
+It was also originally developed with PHP backend functionality.
+GitHub Pages only supports static content, so PHP-based features are not available in the live demo.
+
+The frontend, design, navigation, and core user experience can be viewed in the deployed site.
