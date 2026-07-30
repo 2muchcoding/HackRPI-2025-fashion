@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 321 51% 18%;
+    --foreground: 314 44% 16%;
+
+    --card: 52 100% 95%;
+    --card-foreground: 314 44% 16%;
+
+    --popover: 52 100% 95%;
+    --popover-foreground: 314 44% 16%;
+
+    --primary: 318 26% 52%;
+    --primary-foreground: 52 100% 95%;
+
+    --secondary: 67 27% 37%;
+    --secondary-foreground: 52 100% 95%;
+
+    --muted: 67 27% 85%;
+    --muted-foreground: 72 31% 30%;
+
+    --accent: 72 31% 18%;
+    --accent-foreground: 52 100% 79%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 52 100% 95%;
+
+    --border: 318 26% 70%;
+    --input: 318 26% 85%;
+    --ring: 318 26% 52%;
+
+    --radius: 0.75rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(314 44% 16%) 0%, hsl(318 26% 52%) 100%);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 314 44% 16%;
+    --foreground: 52 100% 79%;
+
+    --card: 314 44% 20%;
+    --card-foreground: 52 100% 79%;
+
+    --popover: 314 44% 16%;
+    --popover-foreground: 52 100% 79%;
+
+    --primary: 318 26% 52%;
+    --primary-foreground: 52 100% 95%;
+
+    --secondary: 72 31% 18%;
+    --secondary-foreground: 52 100% 79%;
+
+    --muted: 72 31% 25%;
+    --muted-foreground: 67 27% 60%;
+
+    --accent: 67 27% 37%;
+    --accent-foreground: 52 100% 79%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 52 100% 95%;
+
+    --border: 318 26% 35%;
+    --input: 318 26% 30%;
+    --ring: 318 26% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .hero-overlay {
+    position: relative;
+  }
+
+  .hero-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* tint using your brand color */
+    background: radial-gradient(circle at top, transparent 0%, #441634cc 55%, #441634 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-animate {
+    animation: heroMove 50s ease-in-out infinite alternate;
+    background-size: 110% 110%;
+  }
+
+  @keyframes heroMove {
+    0% {
+      background-position: 50% 0%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+  }
+}
