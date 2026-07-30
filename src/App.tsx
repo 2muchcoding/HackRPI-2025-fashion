@@ -14,7 +14,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/HackRPI-2025-fashion">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/style/:period" element={<StyleDetail />} />
